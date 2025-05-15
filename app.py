@@ -24,8 +24,7 @@ summaries = dataset['description'].tolist()
 
 def get_bert_embeddings(texts, model_name='all-mpnet-base-v2', batch_size=32):
     print("Generating BERT embeddings...")
-    device = 'cpu'
-    model = SentenceTransformer(model_name)
+    model = SentenceTransformer(model_name, device='cpu')
     return model.encode(texts, show_progress_bar=True, batch_size=batch_size)
 
 embeddings = get_bert_embeddings(summaries)
