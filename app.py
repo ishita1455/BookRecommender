@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import torch
+
 
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
@@ -22,6 +24,7 @@ summaries = dataset['description'].tolist()
 
 def get_bert_embeddings(texts, model_name='all-mpnet-base-v2', batch_size=32):
     print("Generating BERT embeddings...")
+    device = 'cpu'
     model = SentenceTransformer(model_name)
     return model.encode(texts, show_progress_bar=True, batch_size=batch_size)
 
