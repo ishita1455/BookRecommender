@@ -27,7 +27,7 @@ def get_bert_embeddings(texts, model_name='all-mpnet-base-v2', batch_size=32):
     model = SentenceTransformer(model_name, device='cpu')
     return model.encode(texts, show_progress_bar=True, batch_size=batch_size)
 
-embeddings = get_bert_embeddings(summaries)
+embeddings = np.load('embeddings.npy')
 
 print("Reducing dimensions with UMAP...")
 reducer = umap.UMAP(n_neighbors=15, min_dist=0.1, metric='cosine', random_state=42)
