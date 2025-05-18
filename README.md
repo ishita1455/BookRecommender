@@ -43,19 +43,6 @@ A hybrid book recommendation system that combines **semantic similarity using BE
 
 ---
 
-## 📂 Project Structure
-
-```
-📦 book-recommender/
-├── app.py                    # Streamlit application
-├── preprocess.py             # Preprocessing script (cleaning, clustering)
-├── embeddings.npy            # Precomputed BERT embeddings
-├── clustered_dataset.csv     # Cleaned and clustered dataset
-└── README.md                 # Project documentation
-```
-
----
-
 ## 🧠 How It Works
 
 1. **Data Cleaning:** Loads and filters the Goodreads dataset.
